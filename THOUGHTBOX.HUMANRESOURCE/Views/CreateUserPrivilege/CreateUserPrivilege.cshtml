@@ -1,0 +1,130 @@
+﻿<style>
+    .item .alert {
+        float: none !important;
+        padding: 1px 4px !important;
+    }
+</style>
+
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Add User privileges</h1>
+            </div><!-- /.col -->
+
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">Create privilege to a User.<small>Role priority must be unique.</small></h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="RegisterValidation">
+                            <div class="field item form-group row">
+                                <label class="control-label col-md-3 col-sm-3 label-align">User &nbsp;&nbsp;<span style="color:red;font-weight: bold;font-size:large;">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                    </div>
+                                    <select class="form-control has-feedback-left" id="user" onchange="checkDuplication(this.value)" required>
+                                    </select>
+                                    <span style="font-size:14px;color:red;font-weight:500;" id="dupUserNm"></span>
+                                    <input type="hidden" id="dupUpdt" />
+                                    <input type="hidden" id="dupStatus" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-3 col-sm-3 label-align">User Type&nbsp;&nbsp;<span style="color:red;font-weight: bold;font-size:large;">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                    </div>
+                                    <select class="form-control has-feedback-left" id="userType" onchange="GetRoles(this.value)" required>
+                                    </select>
+                                    <span style="font-size:14px;color:red;font-weight:500;" id="dupUserNm"></span>
+                                </div>
+                                <input type="hidden" id="regId" />
+                                <input type="hidden" id="prioStatus" />
+                            </div>
+                            <div class="form-group row ">
+                                <label class="control-label col-md-3 col-sm-3 label-align">Select Role&nbsp;&nbsp;<span style="color:red;font-weight: bold;font-size:large;">*</span></label>
+                                <div class="col-md-12 col-sm-12 form-group">
+                                    <!-- start accordion -->
+                                    <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+
+                                    </div>
+                                    <!-- end of accordion -->
+                                </div>
+                            </div>
+                            <div class="ln_solid"></div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <button type="reset" onclick="resetForm()" class="btn btn-primary btn-block">Reset</button>
+                                </div>
+                                <div class="col-2">
+                                    <input type="button" id="btn-submit" value="Submit" class="btn btn-success btn-block" onclick="InsertRole()" />
+                                </div>
+                            </div>
+                           
+                        </form>
+
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col (left) -->
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Created User privileges can View/Edit/Delete here</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body">
+                            <table id="tbl" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th style="width:20px" class="disabled-sorting">#</th>
+                                        <th>UserType</th>
+                                        <th>Roles</th>
+                                        <th style="width:20px;">Priority</th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col (right) -->
+        </div>
+        <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script src="~/validator/jquery.min.js"></script>
+<script src="~/validator/multifield.js"></script>
+<script src="~/validator/validator.js"></script>
+<script src="~/plugins/iCheck/icheck.min.js"></script>
+<script type="text/javascript" src="~/PScripts/JCreateUserPrivilege.js"></script>
+
+

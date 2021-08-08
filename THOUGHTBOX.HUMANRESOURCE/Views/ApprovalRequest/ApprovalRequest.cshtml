@@ -1,0 +1,164 @@
+﻿@model THOUGHTBOX.HUMANRESOURCE.Models.TempStore;
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Approve Request</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard v1</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">Selected Request can Approve here</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="RegisterValidation">
+
+                            <div class="field item form-group row">
+                                <label>Priority Type<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-award"></i></span>
+                                    </div>
+                                    <select class="form-control has-feedback-left" id="frm_priortytype" required="required">
+                                        <option value="select">Select</option>
+                                        <option value="Urgent">Urgent</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Normal">Normal</option>
+                                    </select>
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="field item form-group row">
+                                <label>Job Start Date<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-table"></i></span>
+                                    </div>
+                                    <input type="date" id="frm_jbstartdate" class="form-control has-feedback-lef" placeholder="Job Start Date" maxlength="20" required>
+                                </div>
+                                @Html.HiddenFor(m => m.custid, new { id = "RequestID" })
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="field item form-group row">
+                                <label>Job End Date<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-table"></i></span>
+                                    </div>
+                                    <input type="date" id="frm_jbenddate" class="form-control has-feedback-lef" placeholder="Job End Date" maxlength="20" required>
+                                </div>
+
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="field item form-group row">
+                                <label>Approving Comments<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="far fa-comments"></i></span>
+                                    </div>
+                                    <textarea rows="3" cols="150" placeholder="Approving Comments" id="frm_approvcomnts" class="form-control has-feedback-lef" maxlength="500" required></textarea>
+                                    <input type="hidden" id="request_id" />
+                                    <input type="hidden" id="request_title" />
+                                    <input type="hidden" id="request_code" />
+                                </div>
+
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="field item form-group row">
+                                <label>Approving Document</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="far fa-file"></i></span>
+                                    </div>
+                                    <input id="frm_imageaprove" type="file" name="frm_imageaprove[]" class="file" data-show-upload="true" data-show-caption="true">
+                                    <input id="hiddenimageaprve" type="hidden" />
+                                    <span id="spanimageaprve"></span>
+                                </div>
+
+                                <!-- /.input group -->
+                            </div>
+
+
+                            <br /><br />
+                            <div class="col-4">
+                                <button type="button" id="btn_submit" class="btn btn-primary btn-block" value="Submit" onclick="approverequestupdate()">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col (left) -->
+           
+                <div class="col-md-6">
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-text-width"></i>
+                                Request Details                                
+                            </h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <dl>
+                                <dt>Request Title</dt>
+                                <dd><span id="FrmDisplay1"></span></dd>
+                                <dt>Requested Date</dt>
+                                <dd><span id="FrmDisplay2"></span></dd>
+                                <dt>Request Details</dt>
+                                <dd><span id="FrmDisplay3"></span></dd>
+                                <dt>Priority Type</dt>
+                                <dd><span id="FrmDisplay4"></span></dd>
+                                <dt>Supporting Document</dt>
+                                <dd><span id="FrmDisplay5"></span></dd>
+                            </dl>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col (right) -->
+            </div>
+
+            <!-- /.row (main row) -->
+        </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<!-- page script -->
+<script src="~/validator/jquery.min.js"></script>
+<script src="~/validator/multifield.js"></script>
+<script src="~/validator/validator.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="~/PScripts/JApprovalRequest.js" type="text/javascript"></script>

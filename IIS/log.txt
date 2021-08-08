@@ -1,0 +1,214 @@
+-------------------------------------------------------------05/12/2020 06:46:35--------------------------------------------------------------------
+System.IO.FileNotFoundException: Could not find file 'F:\Rentacar\IIsfiles\headerLayout.txt'.
+File name: 'F:\Rentacar\IIsfiles\headerLayout.txt'
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize)
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateUserRepository.CreateLayoutPage(IList`1 userTypes, Int32 count) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateUserRepository.cs:line 438
+-------------------------------------------------------------05/12/2020 06:50:08--------------------------------------------------------------------
+System.IO.FileNotFoundException: Could not find file 'F:\Rentacar\IIsfiles\headerLayout.txt'.
+File name: 'F:\Rentacar\IIsfiles\headerLayout.txt'
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize)
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateUserRepository.CreateLayoutPage(IList`1 userTypes, Int32 count) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateUserRepository.cs:line 438
+-------------------------------------------------------------05/12/2020 07:25:32--------------------------------------------------------------------
+System.Exception: Docuement Serial Not Found!!!!
+   at THOUGHTBOX.REPOSITORIES.Classes.ConnectionRepository.GetAutonumber(String parameter, Int32 regid, NpgsqlConnection con, NpgsqlTransaction tr) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\ConnectionRepository.cs:line 219
+   at THOUGHTBOX.REPOSITORIES.Classes.GeneralRepository.getautonumber(String parameter, Int32 regionid) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\GeneralRepository.cs:line 24
+-------------------------------------------------------------05/12/2020 07:25:33--------------------------------------------------------------------
+System.Exception: Docuement Serial Not Found!!!!
+   at THOUGHTBOX.REPOSITORIES.Classes.GeneralRepository.getautonumber(String parameter, Int32 regionid) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\GeneralRepository.cs:line 30
+   at THOUGHTBOX.HR.SERVICES.Classes.GeneralService.getautonumber(String parameter, Int32 regionid) in F:\Rentacar\THOUGHTBOX.HR.SERVICES\Classes\GeneralService.cs:line 102
+-------------------------------------------------------------07/12/2020 13:25:01--------------------------------------------------------------------
+Input string was not in a correct format.
+-------------------------------------------------------------07/12/2020 13:25:12--------------------------------------------------------------------
+Input string was not in a correct format.
+-------------------------------------------------------------07/12/2020 13:25:28--------------------------------------------------------------------
+Input string was not in a correct format.
+-------------------------------------------------------------07/12/2020 13:29:21--------------------------------------------------------------------
+Input string was not in a correct format.
+-------------------------------------------------------------07/12/2020 13:29:24--------------------------------------------------------------------
+Input string was not in a correct format.
+-------------------------------------------------------------07/12/2020 14:28:28--------------------------------------------------------------------
+System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateMasterGeneralRepository.GetAllMasterTypeValuesfromSubNode(Int32 Regid, String Mainmastertype, String Submastertype) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateMasterGeneralRepository.cs:line 434
+-------------------------------------------------------------07/12/2020 14:28:28--------------------------------------------------------------------
+There is no row at position 0.
+-------------------------------------------------------------07/12/2020 14:28:28--------------------------------------------------------------------
+System.Exception: There is no row at position 0.
+   at THOUGHTBOX.HR.SERVICES.Classes.CreateMasterGeneralService.GetAllMasterTypeValuesfromSubNode(Int32 Regid, String Mainmastertype, String Submastertype) in F:\Rentacar\THOUGHTBOX.HR.SERVICES\Classes\CreateMasterGeneralService.cs:line 138
+   at THOUGHTBOX.HUMANRESOURCE.Controllers.CreateCompanyEmployeeController.Getsalarystructure(Int32 regid, String Sub_node, String Master_type) in F:\Rentacar\THOUGHTBOX.HUMANRESOURCE\Controllers\CreateCompanyEmployeeController.cs:line 49
+-------------------------------------------------------------08/12/2020 05:52:28--------------------------------------------------------------------
+System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateMasterGeneralRepository.GetAllMasterTypeValuesfromSubNode(Int32 Regid, String Mainmastertype, String Submastertype) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateMasterGeneralRepository.cs:line 434
+-------------------------------------------------------------08/12/2020 05:52:28--------------------------------------------------------------------
+There is no row at position 0.
+-------------------------------------------------------------08/12/2020 05:52:28--------------------------------------------------------------------
+System.Exception: There is no row at position 0.
+   at THOUGHTBOX.HR.SERVICES.Classes.CreateMasterGeneralService.GetAllMasterTypeValuesfromSubNode(Int32 Regid, String Mainmastertype, String Submastertype) in F:\Rentacar\THOUGHTBOX.HR.SERVICES\Classes\CreateMasterGeneralService.cs:line 138
+   at THOUGHTBOX.HUMANRESOURCE.Controllers.CreateCompanyEmployeeController.Getsalarystructure(Int32 regid, String Sub_node, String Master_type) in F:\Rentacar\THOUGHTBOX.HUMANRESOURCE\Controllers\CreateCompanyEmployeeController.cs:line 49
+-------------------------------------------------------------08/12/2020 05:52:33--------------------------------------------------------------------
+System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateMasterGeneralRepository.GetAllMasterTypeValuesfromSubNode(Int32 Regid, String Mainmastertype, String Submastertype) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateMasterGeneralRepository.cs:line 434
+-------------------------------------------------------------08/12/2020 05:52:33--------------------------------------------------------------------
+There is no row at position 0.
+-------------------------------------------------------------08/12/2020 05:52:33--------------------------------------------------------------------
+System.Exception: There is no row at position 0.
+   at THOUGHTBOX.HR.SERVICES.Classes.CreateMasterGeneralService.GetAllMasterTypeValuesfromSubNode(Int32 Regid, String Mainmastertype, String Submastertype) in F:\Rentacar\THOUGHTBOX.HR.SERVICES\Classes\CreateMasterGeneralService.cs:line 138
+   at THOUGHTBOX.HUMANRESOURCE.Controllers.CreateCompanyEmployeeController.Getsalarystructure(Int32 regid, String Sub_node, String Master_type) in F:\Rentacar\THOUGHTBOX.HUMANRESOURCE\Controllers\CreateCompanyEmployeeController.cs:line 49
+-------------------------------------------------------------08/12/2020 08:39:00--------------------------------------------------------------------
+Npgsql.PostgresException (0x80004005): 22001: value too long for type character varying(750)
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateQuotationRepository.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateQuotationRepository.cs:line 816
+  Exception data:
+    Severity: ERROR
+    SqlState: 22001
+    MessageText: value too long for type character varying(750)
+    File: varchar.c
+    Line: 624
+    Routine: varchar
+-------------------------------------------------------------08/12/2020 08:39:00--------------------------------------------------------------------
+Npgsql.PostgresException (0x80004005): 22001: value too long for type character varying(750)
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateQuotationRepository.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateQuotationRepository.cs:line 1153
+   at THOUGHTBOX.HR.SERVICES.Classes.CreateQuotationService.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.HR.SERVICES\Classes\CreateQuotationService.cs:line 110
+  Exception data:
+    Severity: ERROR
+    SqlState: 22001
+    MessageText: value too long for type character varying(750)
+    File: varchar.c
+    Line: 624
+    Routine: varchar
+-------------------------------------------------------------08/12/2020 08:39:27--------------------------------------------------------------------
+Npgsql.PostgresException (0x80004005): 22001: value too long for type character varying(750)
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateQuotationRepository.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateQuotationRepository.cs:line 816
+  Exception data:
+    Severity: ERROR
+    SqlState: 22001
+    MessageText: value too long for type character varying(750)
+    File: varchar.c
+    Line: 624
+    Routine: varchar
+-------------------------------------------------------------08/12/2020 08:39:27--------------------------------------------------------------------
+Npgsql.PostgresException (0x80004005): 22001: value too long for type character varying(750)
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateQuotationRepository.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateQuotationRepository.cs:line 1153
+   at THOUGHTBOX.HR.SERVICES.Classes.CreateQuotationService.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.HR.SERVICES\Classes\CreateQuotationService.cs:line 110
+  Exception data:
+    Severity: ERROR
+    SqlState: 22001
+    MessageText: value too long for type character varying(750)
+    File: varchar.c
+    Line: 624
+    Routine: varchar
+-------------------------------------------------------------08/12/2020 08:40:03--------------------------------------------------------------------
+Npgsql.PostgresException (0x80004005): 22001: value too long for type character varying(750)
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateQuotationRepository.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateQuotationRepository.cs:line 816
+  Exception data:
+    Severity: ERROR
+    SqlState: 22001
+    MessageText: value too long for type character varying(750)
+    File: varchar.c
+    Line: 624
+    Routine: varchar
+-------------------------------------------------------------08/12/2020 08:40:03--------------------------------------------------------------------
+Npgsql.PostgresException (0x80004005): 22001: value too long for type character varying(750)
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateQuotationRepository.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateQuotationRepository.cs:line 1153
+   at THOUGHTBOX.HR.SERVICES.Classes.CreateQuotationService.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.HR.SERVICES\Classes\CreateQuotationService.cs:line 110
+  Exception data:
+    Severity: ERROR
+    SqlState: 22001
+    MessageText: value too long for type character varying(750)
+    File: varchar.c
+    Line: 624
+    Routine: varchar
+-------------------------------------------------------------08/12/2020 08:40:34--------------------------------------------------------------------
+Npgsql.PostgresException (0x80004005): 22001: value too long for type character varying(750)
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateQuotationRepository.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateQuotationRepository.cs:line 816
+  Exception data:
+    Severity: ERROR
+    SqlState: 22001
+    MessageText: value too long for type character varying(750)
+    File: varchar.c
+    Line: 624
+    Routine: varchar
+-------------------------------------------------------------08/12/2020 08:40:34--------------------------------------------------------------------
+Npgsql.PostgresException (0x80004005): 22001: value too long for type character varying(750)
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateQuotationRepository.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateQuotationRepository.cs:line 1153
+   at THOUGHTBOX.HR.SERVICES.Classes.CreateQuotationService.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.HR.SERVICES\Classes\CreateQuotationService.cs:line 110
+  Exception data:
+    Severity: ERROR
+    SqlState: 22001
+    MessageText: value too long for type character varying(750)
+    File: varchar.c
+    Line: 624
+    Routine: varchar
+-------------------------------------------------------------08/12/2020 08:40:59--------------------------------------------------------------------
+Npgsql.PostgresException (0x80004005): 22001: value too long for type character varying(750)
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateQuotationRepository.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateQuotationRepository.cs:line 816
+  Exception data:
+    Severity: ERROR
+    SqlState: 22001
+    MessageText: value too long for type character varying(750)
+    File: varchar.c
+    Line: 624
+    Routine: varchar
+-------------------------------------------------------------08/12/2020 08:40:59--------------------------------------------------------------------
+Npgsql.PostgresException (0x80004005): 22001: value too long for type character varying(750)
+   at THOUGHTBOX.REPOSITORIES.Classes.CreateQuotationRepository.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.REPOSITORIES\Classes\CreateQuotationRepository.cs:line 1153
+   at THOUGHTBOX.HR.SERVICES.Classes.CreateQuotationService.Update(EnquiryTermsDetails enquiryTermsDetails) in F:\Rentacar\THOUGHTBOX.HR.SERVICES\Classes\CreateQuotationService.cs:line 110
+  Exception data:
+    Severity: ERROR
+    SqlState: 22001
+    MessageText: value too long for type character varying(750)
+    File: varchar.c
+    Line: 624
+    Routine: varchar

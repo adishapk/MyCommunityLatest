@@ -1,0 +1,388 @@
+﻿ <!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Request Graph</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">ChartJS</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <input type="hidden" id="status" />
+                <!-- PIE CHART -->
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">Complete Status Chart</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        <div class="row" id="subchart" style="font-weight:600;font-size:18px" ;></div>
+                    </div>
+
+
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+                <!-- BAR CHART -->
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title" id="emphead"></h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart" id="empdiv">
+                            <canvas id="empChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col (LEFT) -->
+            <div class="col-md-6">
+                <!-- LINE CHART -->
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">DepartmentWise Status Chart</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart" id="pdeptChart">
+                            <canvas id="pieChartDept" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+
+                        </div>
+                        <div class="row" id="subemp" style="font-weight:600"></div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+                
+                <!-- STACKED BAR CHART -->
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title">chart</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart">
+                            <canvas id="stackedBarChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col (RIGHT) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="../../plugins/chart.js/Chart.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+
+    $(document).ready(function () {
+        GetDepartmentGraphs();
+        
+    });
+
+    function GetDepartmentGraphs() {
+        
+        $.ajax({
+            url: "/DepartmentGraph/GetDepartmentGraphs",
+            cache: false,
+            type: "POSt",
+            datatype: "json",
+            success: function (data) {
+                //alert(JSON.stringify(data));
+                if (data != null) {
+                    var deptLabel = [];
+                    var deptCount = [];
+                    var deptColor = [];
+                    var cocode = 1;
+                    var htmlString = "";                    
+                    
+                    for (var x = 0; x < data.length; x++) {  
+                        var req = data[x].reqId.toString();
+                        var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                        if (data[x].status == "Completed") {
+                            htmlString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='#' onclick='subPieChart(\"" + req + "\",\"" + data[x].status + "\")'>Completed</a>";
+                        }
+                       
+                        if (data[x].status == "Not Completed") {
+                            //htmlString += '&nbsp;&nbsp;&nbsp;<a href="#" onclick="subPieChart(' + req + ')">Not Completed</a>';
+                            htmlString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='#' onclick='subPieChart(\"" + req + "\",\"" + data[x].status + "\")'>Not Completed</a>";
+                        }
+                        if (data[x].status == "Pending") {
+                            htmlString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='#' onclick='subPieChart(\"" + req + "\",\"" + data[x].status + "\")'>Pending</a>";
+                        }
+                        deptLabel.push(data[x].status);
+                        deptCount.push(data[x].no_task);
+                        deptColor.push(color);
+                        cocode += 10;
+
+                    }
+                    $("#subchart").append(htmlString);
+                    var deptData = {
+                        labels: deptLabel,
+                        datasets: [
+                            {
+                                data: deptCount,
+                                backgroundColor: deptColor,
+                            }
+                        ]
+                    }
+
+                    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+                    var pieData = deptData;
+                    var pieOptions = {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                    }
+                    //Create pie or douhnut chart
+                    // You can switch between pie and douhnut using the method below.
+                    var pieChart = new Chart(pieChartCanvas, {
+                        type: 'pie',
+                        data: pieData,
+                        options: pieOptions
+                    })
+
+                }
+                else {
+                  
+                }
+
+            },
+            error: function (reponse) {
+              
+            }
+        });
+    }
+
+    function subPieChart(reqId, status) {
+       
+        $("#status").val(status);        
+        document.querySelector("#pdeptChart").innerHTML = '<canvas id="pieChartDept" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>';
+        $.ajax({
+            url: "/DepartmentGraph/GetDepartmentSubGraphStatus",
+            data: { reqId: reqId },
+            cache: false,
+            type: "POSt",
+            datatype: "json",
+            success: function (data) {
+                var htmlString = "";
+                $("#subemp").empty();
+               // alert(JSON.stringify(data));
+                if (data != null)
+                {
+                    var emp1 = data[0].emp_name;                   
+                    if (emp1.indexOf(",") > -1)
+                    {                      
+                        var emp = emp1.split(",");
+                        for (var i = 0; i < emp.length; i++) {
+                            var empname = emp[i].split('^');
+                            htmlString += "&nbsp;&nbsp;&nbsp;&nbsp<a href='#' onclick='empPieChart(\"" + empname[1] + "\",\"" + empname[0] + "\")'>" + empname[0] + "</a>";
+
+                        }
+
+                    }
+                    else {                        
+                        var empname = emp1.split('^');                       
+                        htmlString += "&nbsp;&nbsp;&nbsp;&nbsp<a href='#' onclick='empPieChart(\"" + empname[1] + "\",\"" + empname[0] + "\")'>" + empname[0] + "</a>";
+
+                    }
+                   
+                    $("#subemp").append(htmlString);
+                    var deptLabel = [];
+                    var deptCount = [];
+                    var deptColor = [];
+                    var cocode = 1;
+                    for (var x = 0; x < data.length; x++) {
+                       
+                        var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                        deptLabel.push(data[x].dept);
+                        deptCount.push(data[x].no_task);
+                        deptColor.push(color);
+                        cocode += 10;
+
+                    }
+                    var deptData = {
+                        labels: deptLabel,
+                        datasets: [
+                            {
+                                data: deptCount,
+                                backgroundColor: deptColor,
+                            }
+                        ]
+                    }
+
+                    var pieChartCanvas = $('#pieChartDept').get(0).getContext('2d')
+                    var pieData = deptData;
+                    var pieOptions = {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                    }
+                    //Create pie or douhnut chart
+                    // You can switch between pie and douhnut using the method below.
+                    var pieChart = new Chart(pieChartCanvas, {
+                        type: 'pie',
+                        data: pieData,
+                        options: pieOptions
+                    })
+
+                }
+                else {
+                    var deptLabel = [];
+                    var deptCount = [];
+                    var deptColor = [];
+                    var pieChartCanvas = $('#pieChartDept').get(0).getContext('2d')
+                    var pieData = deptData;
+                    var pieOptions = {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                    }
+                    //Create pie or douhnut chart
+                    // You can switch between pie and douhnut using the method below.
+                    var pieChart = new Chart(pieChartCanvas, {
+                        type: 'pie',
+                        data: pieData,
+                        options: pieOptions
+                    })
+
+                }
+
+            },
+            error: function (reponse) {
+
+            }
+        });
+    }
+
+    function empPieChart(empId,empname) {
+        var status = $("#status").val();
+        document.getElementById("emphead").innerText = empname;
+        document.querySelector("#empdiv").innerHTML = '<canvas id="empChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>';
+        $.ajax({
+            url: "/DepartmentGraph/GetDepartmentSubGraphByEmp",
+            data: { empId: empId, status: status },
+            cache: false,
+            type: "POSt",
+            datatype: "json",
+            success: function (data) {
+               
+                //alert(JSON.stringify(data));
+                if (data != null) {
+                   
+                    var deptLabel = [];
+                    var deptCount = [];
+                    var deptColor = [];
+                    var cocode = 1;
+                    for (var x = 0; x < data.length; x++) {
+
+                        var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                        deptLabel.push(data[x].dept);
+                        deptCount.push(data[x].no_task);
+                        deptColor.push(color);
+                        cocode += 10;
+
+                    }
+                    var deptData = {
+                        labels: deptLabel,
+                        datasets: [
+                            {
+                                data: deptCount,
+                                backgroundColor: deptColor,
+                            }
+                        ]
+                    }
+
+                    var pieChartCanvas = $('#empChart').get(0).getContext('2d')
+                    var pieData = deptData;
+                    var pieOptions = {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                    }
+                    //Create pie or douhnut chart
+                    // You can switch between pie and douhnut using the method below.
+                    var pieChart = new Chart(pieChartCanvas, {
+                        type: 'pie',
+                        data: pieData,
+                        options: pieOptions
+                    })
+
+                }
+                else {
+                    var deptLabel = [];
+                    var deptCount = [];
+                    var deptColor = [];
+                    var pieChartCanvas = $('#empChart').get(0).getContext('2d')
+                    var pieData = deptData;
+                    var pieOptions = {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                    }
+                    //Create pie or douhnut chart
+                    // You can switch between pie and douhnut using the method below.
+                    var pieChart = new Chart(pieChartCanvas, {
+                        type: 'pie',
+                        data: pieData,
+                        options: pieOptions
+                    })
+
+                }
+
+            },
+            error: function (reponse) {
+
+            }
+        });
+    }
+</script>

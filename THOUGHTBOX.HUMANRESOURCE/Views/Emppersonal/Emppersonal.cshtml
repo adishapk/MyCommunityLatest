@@ -1,0 +1,368 @@
+﻿    <!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Employee Details</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard v1</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">New Employees can create here</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="RegisterValidation">
+
+                            <div class="row">
+                                <div class="col-6 field item form-group">
+
+                                    <label>Reported To<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-user-tag"></i></span>
+                                        </div>
+                                        <select class="form-control has-feedback-left" id="frm_reportedto" required="required">
+                                        </select>
+                                    </div>
+
+
+
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div class="col-6 field item form-group">
+                                    <label>Photograph</label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-camera-retro"></i></span>
+                                        </div>
+                                        <input id="frm_photograph" type="file" name="frm_photograph[]" class="file" data-show-upload="true" data-show-caption="true">
+                                        <input id="hiddenphoto" type="hidden" />
+                                        <span id="emp_image"></span>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 field item form-group">
+
+                                    <label>First Name<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-file-image"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_firstname" class="form-control has-feedback-lef" placeholder="First Name" maxlength="50" required>
+                                        <input type="hidden" id="employee_id" />
+                                        <input type="hidden" id="Tabcounter1" />
+                                        <input type="hidden" id="Tabcounter2" />
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div class="col-6 field item form-group">
+                                    <label>Last Name<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-images"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_lastname" class="form-control has-feedback-lef" placeholder="Last Name" maxlength="50" required>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 field item form-group">
+
+                                    <label>Employee Code<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-code-branch"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_empcode" class="form-control has-feedback-lef" placeholder="Employee Code" maxlength="20" required readonly>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div class="col-6 field item form-group">
+                                    <label>Card Number/Cash<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-barcode"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_cardno" class="form-control has-feedback-lef" placeholder="Card Number/Cash" maxlength="30" required>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 field item form-group">
+
+                                    <label>Mobile Number<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_mobileno" class="form-control has-feedback-lef" placeholder="Mobile Number" maxlength="20" required>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div class="col-6 field item form-group">
+                                    <label>Status<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-thermometer-quarter"></i></span>
+                                        </div>
+                                        <select class="form-control has-feedback-left" id="frm_empstatus" required="required">
+                                            <option value="">--Choose an Option--</option>
+                                            <option value="Active">Active</option>
+                                            <option value="Inactive">In Active</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 field item form-group">
+
+                                    <label>Date of Birth<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                        <input type="date" id="frm_dteofbirth" class="form-control has-feedback-lef" placeholder="Date of Birth" maxlength="20" required>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div class="col-6 field item form-group">
+                                    <label>Nationality<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-radiation"></i></span>
+                                        </div>
+                                        <select class="form-control has-feedback-lef" id="frm_nationality" required="required">
+                                        </select>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-6 field item form-group">
+
+                                    <label>Designation<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
+                                        </div>
+                                        <select class="form-control has-feedback-lef" id="frm_designation" required="required">
+                                        </select>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div class="col-6 field item form-group">
+                                    <label>Date of Join<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                        <input type="date" id="frm_dtejoin" class="form-control has-feedback-lef" placeholder="Date of Join" maxlength="20" required>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 field item form-group">
+
+                                    <label>Qatar ID<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-id-card"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_qid" class="form-control has-feedback-lef" placeholder="Qatar ID" maxlength="30" required>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div class="col-6 field item form-group">
+                                    <label>Expiry Date <span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                        <input type="date" id="frm_qidexpdte" class="form-control has-feedback-lef" placeholder="QID Expiry Date" maxlength="20" required>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 field item form-group">
+
+                                    <label>Health Card Id<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-id-card-alt"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_hlthcardid" class="form-control has-feedback-lef" placeholder="Health Card Id" maxlength="30" required>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div class="col-6 field item form-group">
+                                    <label>Expiry Date <span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                        <input type="date" id="frm_hlthcrdexpdte" class="form-control has-feedback-lef" placeholder="Healthcard Expiry Date" maxlength="20" required>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 field item form-group">
+
+                                    <label>Passport Number<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-passport"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_psprtno" class="form-control has-feedback-lef" placeholder="Passport Number" maxlength="30" required>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div class="col-6 field item form-group">
+                                    <label>Expiry Date <span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                        <input type="date" id="frm_pasprtexpdte" class="form-control has-feedback-lef" placeholder="Passport Expiry Date" maxlength="20" required>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+
+
+                            <div id="empl_saldetails"></div>
+
+
+                            <br /><br />
+                            <div class="col-2">
+                                <button type="button" id="btn_submit" class="btn btn-primary btn-block" value="Submit" onclick="addemployeedetails()">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col (left) -->
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Created Employees can View/Edit/Delete here</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body">
+                            <table id="tbl1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Employee Code</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Mobile No</th>
+                                        <th>Qatar ID</th>
+                                        <th>Passport No</th>
+                                        <th>Status</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+
+
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col (right) -->
+        </div>
+        <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<!-- page script -->
+<script src="~/validator/jquery.min.js"></script>
+<script src="~/validator/multifield.js"></script>
+<script src="~/validator/validator.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="~/PScripts/JEmppersonal.js" type="text/javascript"></script>

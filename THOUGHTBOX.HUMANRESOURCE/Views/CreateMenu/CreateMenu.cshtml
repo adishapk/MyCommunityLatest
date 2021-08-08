@@ -1,0 +1,156 @@
+﻿    <!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Create Menu</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">Menus can add here.</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="RegisterValidation">
+                            <div class="field item form-group row">
+                                 <div class="input-group">
+                                    <div class="form-group clearfix">
+                                        <div class="icheck-danger d-inline">
+                                            <input type="radio" name="r3" checked="" value="main"  id="radioSuccess1">
+                                            <label for="radioSuccess1">Main Menu
+                                            </label>
+                                        </div>
+                                        <div class="icheck-primary d-inline">
+                                            <input type="radio"  name="r3" value="sub" id="radioSuccess2">
+                                            <label for="radioSuccess2">Sub Menu
+                                            </label>
+                                        </div>                                      
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="field item form-group row">
+                                <label>Menu Name<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-book"></i></span>
+                                    </div>
+                                    <input type="text" id="menuName" class="form-control has-feedback-lef" placeholder="Menu Name" maxlength="150" required>
+                                </div>
+
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="field item form-group row subList" style="display:none">
+                                <label>Select Master Type<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-book"></i></span>
+                                    </div>
+                                    <select class="form-control has-feedback-lef" id="mainMenu">
+                                    </select>
+                                    <input type="hidden" id="menu_id" />
+                                </div>
+
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="field item form-group row subList" style="display:none">
+                                <label>File Name<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-book"></i></span>
+                                    </div>
+                                    <input type="text" id="fileName" class="form-control has-feedback-lef" placeholder="File Name" maxlength="150">
+                                </div>
+
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="field item form-group row" id="icon">
+                                <label>Icon Name</label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-book"></i></span>
+                                    </div>
+                                    <input type="text" id="iconName" class="form-control has-feedback-lef" placeholder="Icon Name" maxlength="150">
+                                </div>
+
+                                <!-- /.input group -->
+                            </div>
+
+                            <br /><br />
+                            <div class="row">
+                                <div class="col-2">
+                                    <button type="reset" class="btn btn-primary btn-block" value="Reset">Reset</button>
+                                </div>
+                                <div class="col-2">
+                                    <input type="button" id="btn-submit" class="btn btn-success btn-block" value="Submit" onclick="addMenu()" />
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col (left) -->
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Created Menu can View/Edit/Delete here</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body">
+                            <table id="tbl" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Menu Name</th>
+                                        <th>Parent Name</th>
+                                        <th>Icon</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+
+
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col (right) -->
+        </div>
+        <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<!-- page script -->
+<script src="~/validator/jquery.min.js"></script>
+<script src="~/validator/multifield.js"></script>
+<script src="~/validator/validator.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="~/PScripts/JCreateMenu.js" type="text/javascript"></script>
+

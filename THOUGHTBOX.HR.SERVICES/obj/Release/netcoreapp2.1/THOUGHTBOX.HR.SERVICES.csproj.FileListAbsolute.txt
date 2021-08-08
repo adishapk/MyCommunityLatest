@@ -1,0 +1,14 @@
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\obj\Release\netcoreapp2.1\THOUGHTBOX.HR.SERVICES.csprojAssemblyReference.cache
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\obj\Release\netcoreapp2.1\THOUGHTBOX.HR.SERVICES.AssemblyInfoInputs.cache
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\obj\Release\netcoreapp2.1\THOUGHTBOX.HR.SERVICES.AssemblyInfo.cs
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\obj\Release\netcoreapp2.1\THOUGHTBOX.HR.SERVICES.csproj.CoreCompileInputs.cache
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\bin\Release\netcoreapp2.1\THOUGHTBOX.HR.SERVICES.deps.json
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\bin\Release\netcoreapp2.1\THOUGHTBOX.HR.SERVICES.dll
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\bin\Release\netcoreapp2.1\THOUGHTBOX.HR.SERVICES.pdb
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\bin\Release\netcoreapp2.1\THOUGHTBOX.DOMAIN.dll
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\bin\Release\netcoreapp2.1\THOUGHTBOX.REPOSITORIES.dll
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\bin\Release\netcoreapp2.1\THOUGHTBOX.DOMAIN.pdb
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\bin\Release\netcoreapp2.1\THOUGHTBOX.REPOSITORIES.pdb
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\obj\Release\netcoreapp2.1\THOUGHTBOX.HR.SERVICES.csproj.CopyComplete
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\obj\Release\netcoreapp2.1\THOUGHTBOX.HR.SERVICES.dll
+D:\ASSETS\MyCommunity\THOUGHTBOX.HR.SERVICES\obj\Release\netcoreapp2.1\THOUGHTBOX.HR.SERVICES.pdb

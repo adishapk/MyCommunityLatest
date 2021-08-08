@@ -1,0 +1,9 @@
+D:\ASSETS\MyCommunity\THOUGHTBOX.DOMAIN\obj\Release\netcoreapp2.1\THOUGHTBOX.DOMAIN.csprojAssemblyReference.cache
+D:\ASSETS\MyCommunity\THOUGHTBOX.DOMAIN\obj\Release\netcoreapp2.1\THOUGHTBOX.DOMAIN.AssemblyInfoInputs.cache
+D:\ASSETS\MyCommunity\THOUGHTBOX.DOMAIN\obj\Release\netcoreapp2.1\THOUGHTBOX.DOMAIN.AssemblyInfo.cs
+D:\ASSETS\MyCommunity\THOUGHTBOX.DOMAIN\obj\Release\netcoreapp2.1\THOUGHTBOX.DOMAIN.csproj.CoreCompileInputs.cache
+D:\ASSETS\MyCommunity\THOUGHTBOX.DOMAIN\bin\Release\netcoreapp2.1\THOUGHTBOX.DOMAIN.deps.json
+D:\ASSETS\MyCommunity\THOUGHTBOX.DOMAIN\bin\Release\netcoreapp2.1\THOUGHTBOX.DOMAIN.dll
+D:\ASSETS\MyCommunity\THOUGHTBOX.DOMAIN\bin\Release\netcoreapp2.1\THOUGHTBOX.DOMAIN.pdb
+D:\ASSETS\MyCommunity\THOUGHTBOX.DOMAIN\obj\Release\netcoreapp2.1\THOUGHTBOX.DOMAIN.dll
+D:\ASSETS\MyCommunity\THOUGHTBOX.DOMAIN\obj\Release\netcoreapp2.1\THOUGHTBOX.DOMAIN.pdb

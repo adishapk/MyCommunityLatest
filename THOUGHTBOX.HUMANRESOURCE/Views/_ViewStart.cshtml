@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+
+    var sessionName = new Byte[20];
+    bool nameOK = Context.Session.TryGetValue("layoutName", out sessionName);
+
+    if (nameOK)
+    {
+        string result = System.Text.Encoding.UTF8.GetString(sessionName);
+        Layout = result;
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+}

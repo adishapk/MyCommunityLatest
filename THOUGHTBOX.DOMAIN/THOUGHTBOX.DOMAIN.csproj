@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="obj\Debug\netcoreapp2.1\THOUGHTBOX.DOMAIN.AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\netcoreapp2.1\THOUGHTBOX.DOMAIN.deps.json" />
+    <Content Include="obj\Debug\netcoreapp2.1\THOUGHTBOX.DOMAIN.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\THOUGHTBOX.DOMAIN.csproj.nuget.dgspec.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\netcoreapp2.1\THOUGHTBOX.DOMAIN.dll" />
+    <None Include="bin\Debug\netcoreapp2.1\THOUGHTBOX.DOMAIN.pdb" />
+    <None Include="obj\Debug\netcoreapp2.1\THOUGHTBOX.DOMAIN.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\netcoreapp2.1\THOUGHTBOX.DOMAIN.assets.cache" />
+    <None Include="obj\Debug\netcoreapp2.1\THOUGHTBOX.DOMAIN.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\netcoreapp2.1\THOUGHTBOX.DOMAIN.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\netcoreapp2.1\THOUGHTBOX.DOMAIN.dll" />
+    <None Include="obj\Debug\netcoreapp2.1\THOUGHTBOX.DOMAIN.pdb" />
+    <None Include="obj\THOUGHTBOX.DOMAIN.csproj.nuget.cache" />
+    <None Include="obj\THOUGHTBOX.DOMAIN.csproj.nuget.g.props" />
+    <None Include="obj\THOUGHTBOX.DOMAIN.csproj.nuget.g.targets" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="4.1.1" />
+  </ItemGroup>
+
+</Project>

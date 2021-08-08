@@ -1,0 +1,319 @@
+﻿    <!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Customer Details</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard v1</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">New Customer Details can create here</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="RegisterValidation">
+
+                            <div class="row">
+                                <div class="col-6 field item form-group">
+                                    <label>Customer Name<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-file-image"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_customername" class="form-control has-feedback-lef" placeholder="Customer Name" maxlength="75" required>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div class="col-6 field item form-group">
+                                    <label>Street Address</label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-address-card"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_strtaddress" class="form-control has-feedback-lef" placeholder="Street Address" maxlength="200">
+                                        <input type="hidden" id="customer_id" />
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 field item form-group">
+                                    <label>City</label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-building"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_city" class="form-control has-feedback-lef" placeholder="City" maxlength="50">
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div class="col-6 field item form-group">
+                                    <label>State</label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-flag-usa"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_state" class="form-control has-feedback-lef" placeholder="State" maxlength="50">
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 field item form-group">
+                                    <label>Phone Number</label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-phone-volume"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_phnumber" class="form-control has-feedback-lef" placeholder="Phone Number" maxlength="25">
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div class="col-6 field item form-group">
+                                    <label>Email Address</label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                                        </div>
+                                        <input type="email" id="frm_email" class="form-control has-feedback-lef" placeholder="Email Address" maxlength="100">
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-6 field item form-group">
+                                    <label>Contact Person (CP)</label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-user-clock"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_contactpersn" class="form-control has-feedback-lef" placeholder="Contact Person (CP)" maxlength="100">
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+
+
+                                <div class="col-6 field item form-group">
+                                    <label>(CP) Designation</label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-map-marked"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_cpdesigntn" class="form-control has-feedback-lef" placeholder="(CP) Designation" maxlength="100">
+                                       
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+
+
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-6 field item form-group">
+                                    <label>Status<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-thermometer-half"></i></span>
+                                        </div>
+                                        <select class="form-control has-feedback-left" id="frm_cpstatus" required="required">
+                                            <option value="">--Choose an Option--</option>
+                                            <option value="Active" selected>Active</option>
+                                            <option value="Inactive">In Active</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+
+                                <div class="col-6 field item form-group">
+                                    <label>Paid Status<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-battery-half"></i></span>
+                                        </div>
+                                        <select class="form-control has-feedback-left" id="frm_paidstatus" required>
+                                            <option value="">--Choose an Option--</option>
+                                            <option value="Paid">Paid</option>
+                                            <option value="Notpaid">Not Paid</option>
+
+                                        </select>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+
+
+                            </div>
+
+
+                            <div class="row">
+
+
+                                <div class="col-6 field item form-group">
+                                    <label>Customer Type<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fab fa-intercom"></i></span>
+                                        </div>
+                                        <select class="form-control has-feedback-left" id="frm_custtype" required>
+                                            <option value="">--Choose an Option--</option>
+                                            <option value="Associate">Associate</option>
+                                            <option value="Client">Client</option>
+                                            <option value="Seller">Seller</option>
+
+                                        </select>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div class="col-6 field item form-group">
+                                    <label>Paid Amount</label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-money-check-alt"></i></span>
+                                        </div>
+                                        <input type="text" id="frm_paidamnt" class="form-control has-feedback-lef" placeholder="Paid Amount" maxlength="10">
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+
+                            </div>
+
+
+
+                            <div class="row">
+
+
+                                <div class="col-6 field item form-group">
+                                    <label>Marketing Executive<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-house-user"></i></span>
+                                        </div>
+                                        <select class="form-control has-feedback-left" id="frm_empployeeid" required>
+                                        </select>
+                                    </div>
+
+                                    <!-- /.input group -->
+                                </div>
+
+                            
+
+
+                            </div>
+
+
+
+
+                            <br /><br />
+                            <div class="col-2">
+                                <button type="button" id="btn_submit" class="btn btn-primary btn-block" value="Submit" onclick="createcustomerinsert()">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col (left) -->
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Created Customers can View/Edit/Delete here</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body">
+                            <table id="tbl1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Customer Name</th>
+                                        <th>Customer Type</th>
+                                        <th>Contact Person</th>
+                                        <th>Paid Status</th>
+                                        <th>Phone Number</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+
+
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col (right) -->
+        </div>
+        <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<!-- page script -->
+<script src="~/validator/jquery.min.js"></script>
+<script src="~/validator/multifield.js"></script>
+<script src="~/validator/validator.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="~/PScripts/JCreateCustomer.js" type="text/javascript"></script>

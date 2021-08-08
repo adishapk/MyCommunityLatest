@@ -1,0 +1,140 @@
+﻿    <!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Master Values</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard v1</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">Values under a selected Master Type can add here. Eg: India under Country</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="RegisterValidation">
+                            <div class="field item form-group row">
+                                <label>Select Master Type<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="far fa-keyboard"></i></span>
+                                    </div>
+                                    <select class="form-control has-feedback-lef" id="frm_selctmastertype" required="required">
+                                    </select>
+                                    <input type="hidden" id="master_id" />
+                                </div>
+
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="field item form-group row">
+                                <label>Master Value<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="far fa-heart"></i></span>
+                                    </div>
+                                    <input type="text" id="frm_mastervalue" class="form-control has-feedback-lef" placeholder="Master Value" maxlength="150" required>
+                                </div>
+
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="field item form-group">
+                                <label>Master Remarks</label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-award"></i></span>
+                                    </div>
+                                    <textarea rows="3" cols="150" placeholder="Master Remarks" id="frm_masterremarks" class="form-control has-feedback-lef" maxlength="200"></textarea>
+                                </div>
+
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="field item form-group row">
+                                <label>Permanent<span class="required" style="color:red;font-weight: bold;font-size:large;">*</span></label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-anchor"></i></span>
+                                    </div>
+                                    <select class="form-control has-feedback-left" id="frm_permanent" required="required">
+                                        <option value="">Select</option>
+                                        <option value="YES">Yes</option>
+                                        <option value="NO">No</option>
+                                    </select>
+                                </div>
+
+                                <!-- /.input group -->
+                            </div>
+
+                            <br /><br />
+                            <div class="col-4">
+                                <button type="button" id="btn_submit" class="btn btn-primary btn-block" value="Submit" onclick="addmastervalues()">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col (left) -->
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Created Master Values can View/Edit/Delete here</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body">
+                            <table id="tbl1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Master Value</th>
+                                        <th>Master Type</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+
+
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col (right) -->
+        </div>
+        <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<!-- page script -->
+<script src="~/validator/jquery.min.js"></script>
+<script src="~/validator/multifield.js"></script>
+<script src="~/validator/validator.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="~/PScripts/Jcreatemastervalues.js" type="text/javascript"></script>

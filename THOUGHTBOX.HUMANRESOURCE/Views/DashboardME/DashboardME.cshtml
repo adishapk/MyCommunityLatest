@@ -1,0 +1,404 @@
+﻿
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Dashboard - Marketing Executive</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">ChartJS</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">Pending for Approval</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <div id="accordion">
+                            <!-- we are adding the .class so bootstrap.js collapse plugin detects it -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">
+
+                                        <a data-toggle="collapse" href="#collapseOne" data-card-widget="collapse">
+                                            Allocated Requests &nbsp;<span id="requestapproval1" style="color:black;font-weight:bold;"></span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                @*<div id="collapseOne" class="card-body">*@
+                                <div class="card-body" id="requesttable1">
+
+                                </div>
+                                @*</div>*@
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" data-card-widget="collapse">
+                                            Requests for Approval &nbsp;<span id="requestapproval2" style="color:black;font-weight:bold;">0</span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                @*<div id="collapseTwo" class="panel-collapse collapse">*@
+                                <div class="card-body" id="requesttable2">
+
+                                    @*</div>*@
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- /.card-body -->
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Status View</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <div id="accordion">
+                            <!-- we are adding the .class so bootstrap.js collapse plugin detects it -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" data-card-widget="collapse">
+                                            Target Status <span id="requestapproval3" style="color:black;font-weight:bold;">0</span>
+
+                                        </a>
+                                    </h4>
+                                </div>
+                                @*<div id="collapseThree" class="panel-collapse collapse in">*@
+                                <div class="card-body" id="requesttable3">
+
+                                </div>
+                                @*</div>*@
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" data-card-widget="collapse">
+                                            Meeting Status <span id="requestapproval4" style="color:black;font-weight:bold;">0</span>
+
+                                        </a>
+                                    </h4>
+                                </div>
+                                @*<div id="collapseFour" class="panel-collapse collapse">*@
+                                <div class="card-body" id="requesttable4">
+
+                                </div>
+                                @*</div>*@
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- /.card-body -->
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <input type="hidden" id="status" />
+                <!-- PIE CHART -->
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">Complete Status Chart</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <div class="form-group clearfix">
+                                <div class="icheck-danger d-inline">
+                                    <input type="radio" name="r3" checked="" value="Internal" id="radioSuccess1">
+                                    <label for="radioSuccess1">
+                                        Internal
+                                    </label>
+                                </div>
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" name="r3" value="LeadGeneration" id="radioSuccess2">
+                                    <label for="radioSuccess2">
+                                        Lead Generation
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart" id="compdiv">
+                            <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            <div class="row" id="subchart" style="font-weight:600;font-size:18px" ;></div>
+                        </div>
+                        
+                    </div>
+                        <!-- /.card-body -->
+                    </div>
+                <!-- /.card -->
+               
+            </div>
+            <!-- /.col (LEFT) -->
+            <div class="col-md-6">
+                <!-- BAR CHART -->
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title" id="emphead"></h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart" id="empdiv">
+                            <canvas id="empChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col (RIGHT) -->
+        </div>
+        <!-- /.row -->
+
+
+    </div><!-- /.container-fluid -->
+
+
+
+</section>
+<!-- /.content -->
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="../../plugins/chart.js/Chart.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+
+<script src="~/validator/multifield.js"></script>
+<script src="~/validator/validator.js"></script>
+<script src="~/plugins/iCheck/icheck.min.js"></script>
+<script src="~/PScripts/JDashboardME.js" type="text/javascript"></script>
+<!-- page script -->
+
+
+<script>
+
+    $(document).ready(function () {
+        GetDepartmentGraphs("Internal");
+    });
+
+    $(function () {
+        $('input[name="r3"]:radio').change(function () {
+            var pcheck = $("input[name='r3']:checked").val();
+            GetDepartmentGraphs(pcheck);
+        });
+    });
+
+    function GetDepartmentGraphs(reqType) {
+        document.querySelector("#compdiv").innerHTML = '<canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas><div class="row" id="subchart" style="font-weight:600;font-size:18px" ;></div>';
+
+        $.ajax({
+            url: "/DepartmentGraph/GetDHDepartmentGraphs",
+            cache: false,
+            data: { Dtype: "ME", reqType: reqType },
+            type: "POSt",
+            datatype: "json",
+            success: function (data) {
+               // alert(JSON.stringify(data));
+                if (data != null) {
+                    var deptLabel = [];
+                    var deptCount = [];
+                    var deptColor = [];
+                    var cocode = 1;
+                    var htmlString = "";
+                    var empId1 = "-1";
+                    for (var x = 0; x < data.length; x++) {
+                        var req = data[x].reqId.toString();
+                        var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                        if (data[x].status == "Completed") {
+                            htmlString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='#pieChart' onclick='empPieChart(\"" + empId1 + "\",\"" + data[x].status + "\")'>Completed</a>";
+                        }
+
+                        if (data[x].status == "Not Completed") {
+                            //htmlString += '&nbsp;&nbsp;&nbsp;<a href="#" onclick="subPieChart(' + req + ')">Not Completed</a>';
+                            htmlString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='#pieChart' onclick='empPieChart(\"" + empId1 + "\",\"" + data[x].status + "\")'>Not Completed</a>";
+                        }
+                        if (data[x].status == "Pending") {
+                            htmlString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='#pieChart' onclick='empPieChart(\"" + empId1 + "\",\"" + data[x].status + "\")'>Pending</a>";
+                        }
+                        deptLabel.push(data[x].status);
+                        deptCount.push(data[x].no_task);
+                        deptColor.push(color);
+                        cocode += 10;
+
+                    }
+                    $("#subchart").append(htmlString);
+                    var deptData = {
+                        labels: deptLabel,
+                        datasets: [
+                            {
+                                data: deptCount,
+                                backgroundColor: deptColor,
+                            }
+                        ]
+                    }
+
+                    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+                    var pieData = deptData;
+                    var pieOptions = {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                    }
+                    //Create pie or douhnut chart
+                    // You can switch between pie and douhnut using the method below.
+                    var pieChart = new Chart(pieChartCanvas, {
+                        type: 'pie',
+                        data: pieData,
+                        options: pieOptions
+                    })
+
+                }
+                else {
+
+                }
+
+            },
+            error: function (reponse) {
+
+            }
+        });
+    }
+
+    function empPieChart(empId, status) {
+        //var status = $("#status").val();
+        var reqType = $("input[name='r3']:checked").val();
+        document.getElementById("emphead").innerText = status;
+        document.querySelector("#empdiv").innerHTML = '<canvas id="empChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>';
+        $.ajax({
+            url: "/DepartmentGraph/GetDepartmentSubGraphByEmp",
+            data: { empId: empId, status: status, reqType: reqType},
+            cache: false,
+            type: "POSt",
+            datatype: "json",
+            success: function (data) {
+                //alert(JSON.stringify(data));
+                if (data != null) {
+
+                    var deptLabel = [];
+                    var deptCount = [];
+                    var deptColor = [];
+                    var cocode = 1;
+                    for (var x = 0; x < data.length; x++) {
+
+                        var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                        deptLabel.push(data[x].dept);
+                        deptCount.push(data[x].no_task);
+                        deptColor.push(color);
+                        cocode += 10;
+
+                    }
+                    var deptData = {
+                        labels: deptLabel,
+                        datasets: [
+                            {
+                                data: deptCount,
+                                backgroundColor: deptColor,
+                            }
+                        ]
+                    }
+
+                    var pieChartCanvas = $('#empChart').get(0).getContext('2d')
+                    var pieData = deptData;
+                    var pieOptions = {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                    }
+                    //Create pie or douhnut chart
+                    // You can switch between pie and douhnut using the method below.
+                    var pieChart = new Chart(pieChartCanvas, {
+                        type: 'pie',
+                        data: pieData,
+                        options: pieOptions
+                    })
+
+                }
+                else {
+                    var deptLabel = [];
+                    var deptCount = [];
+                    var deptColor = [];
+                    var pieChartCanvas = $('#empChart').get(0).getContext('2d')
+                    var pieData = deptData;
+                    var pieOptions = {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                    }
+                    //Create pie or douhnut chart
+                    // You can switch between pie and douhnut using the method below.
+                    var pieChart = new Chart(pieChartCanvas, {
+                        type: 'pie',
+                        data: pieData,
+                        options: pieOptions
+                    })
+
+                }
+
+            },
+            error: function (reponse) {
+
+            }
+        });
+    }
+</script>
+
+
+
+
+
+
